@@ -1,4 +1,6 @@
 🚀🚀🚀🚀npm install react-icons --save
+🚀🚀🚀🚀npm install bootstrap
+
 🚀🚀🚀🚀  CHANGE DESIGN 
 
 import React, { useState } from "react"
