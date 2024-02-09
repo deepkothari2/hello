@@ -45,21 +45,9 @@ const Crud1 = () => {
 		<>
 			<h1>Products</h1>
 			<form action="" onSubmit={handleSubmit}>
-				<input
-					type="text"
-					name="name"
-					value={input.name || ""}
-					onChange={handleChange}
-					className="block w-60 mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
-				/>
-				<input
-					type="text"
-					name="price"
-					value={input.price || ""}
-					onChange={handleChange}
-					className="block w-60 mb-4 p-2 border border-gray-500 rounded-none focus:ring focus:ring-indigo-300 focus:outline-none"
-				/>
-				<button className="block w-60 border border-indigo-500 text-lg py-2 px-6 bg-indigo-600 text-white hover:bg-white hover:text-indigo-400">{edit ? "UPDATE" : "ADD"}</button>
+				<input type="text" name="name" value={input.name || ""} onChange={handleChange} />
+				<input type="text" name="price" value={input.price || ""} onChange={handleChange} />
+				<button>{edit ? "UPDATE" : "ADD"}</button>
 			</form>
 			<table className="table-auto">
 				<thead>
