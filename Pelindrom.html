@@ -1,0 +1,81 @@
+<script>
+    class Node {
+        constructor(value) {
+            this.value = value
+            this.next = null
+        }
+    }
+    class LinkedList {
+        constructor() {
+            this.head = null
+            this.size = 0
+        }
+        insertAtLast(value) {
+            var newNode = new Node(value)
+            if (this.head == null) {
+                this.head = newNode
+            } else {
+                var current = this.head
+                while (current.next) {
+                    current = current.next
+                }
+                current.next = newNode
+            }
+            this.size++
+        }
+
+        print() {
+            var current = this.head
+            var str = ""
+            while (current) {
+                str += current.value
+                current = current.next
+                str += '->'
+            }
+            str += "null"
+            console.log(str)
+        }
+        // pelimdrom() {
+        //     var arr = []
+        //     var current = this.head
+        //     while (current) {
+        //         arr.unshift(current.value)
+        //         current = current.next
+        //     }
+        //     var current = this.head
+        //     while (current) {
+        //         if (current.value != arr.shift()) {
+        //             return false
+        //         }
+        //         current = current.next
+        //     }
+        //     return true
+        // }
+
+        pelimdrom() {
+            var arr = []
+            var current = this.head
+            while (current) {
+                arr.unshift(current.value)
+                current = current.next
+            }
+
+        }
+
+
+    }
+
+    const list = new LinkedList
+    list.insertAtLast(10)
+    list.insertAtLast(20)
+    list.insertAtLast(30)
+    // list.insertAtLast(30)
+    list.insertAtLast(20)
+    list.insertAtLast(10)
+    list.print()
+    console.log(list.pelimdrom() ? 'Pelindrom' : 'No pelindrom')
+
+
+
+
+</script>

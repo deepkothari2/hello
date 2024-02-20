@@ -1,0 +1,66 @@
+<script>
+    class Node {
+        constructor(value) {
+            this.value = value
+            this.next = null
+        }
+    }
+    class LinkedList {
+        constructor() {
+            this.head = null
+            this.size = 0
+        }
+        insertAtLast(value) {
+            var newNode = new Node(value)
+            if (this.head == null) {
+                this.head = newNode
+            } else {
+                var current = this.head
+                while (current.next) {
+                    current = current.next
+                }
+                current.next = newNode
+            }
+            this.size++
+        }
+
+
+
+        print() {
+            var current = this.head
+            var str = ""
+            while (current) {
+                str += current.value
+                current = current.next
+                str += '->'
+            }
+            str += "null"
+            console.log(str)
+        }
+        reverser() {
+            var current = this.head
+            var prev = null
+            var next
+            while (current) {
+                next = current.next   //next = 30
+                current.next = prev   //[20/10]
+                prev = current        //10
+                current = next        //30
+            }
+            this.head = prev
+        }
+
+    }
+
+    const list = new LinkedList
+    list.insertAtLast(10)
+    list.insertAtLast(20)
+    list.insertAtLast(30)
+    list.insertAtLast(40)
+    list.insertAtLast(50)
+    list.insertAtLast(60)
+    list.print()
+    list.reverser()
+    list.print()
+
+</script>
